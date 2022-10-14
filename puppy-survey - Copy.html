@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Puppy Survey Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="puppycss.css" rel="stylesheet">
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1, p {
+  margin: 0.5em auto;
+  text-align: center;
+}
+
+p {
+  font-size: 18pt;
+  padding-bottom: 30;
+}
+
+body { background-color: #e8d596;
+  font-family: "Courier New";
+  font-size: 16px;
+  color: #ffffff;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+form {
+  width: 60vw;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+}
+
+::placeholder {
+  font-family: "Courier New";
+  color: gray;
+}
+
+select {
+  font-family: "Courier New";
+  color: gray;
+  background-color: #ffffff;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.inline {
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+input,
+textarea,
+select {
+  margin: 10px 0 0 0;
+  min-height: 2em;
+  width: 100%;
+}
+
+fieldset{
+  border: none;
+  padding: 1rem 0;
+  border-bottom: 1px solid #645215;
+}
+
+#first-fieldset-top-border {
+  border-top: 1px solid #645215;
+  padding-top: 0;
+}
+
+div {
+  padding-top: 30;
+  text-align: center;
+}
+
+#submit {
+  font-family: "Courier New";
+  color: #000000;
+}
+
+/* 10/12/22 9:46pm: i have no idea how to get rid of the borders that appeared out of nowhere?? and at one point i went as far as adding "border: none;" to literally each lil CSS thing i put in which didn't work and clearly my googlged "hideborder" solution isn't working so i'm absolutely baffled rn and have 0 idea of what i did wrong so just ignore the borders bc actually wtf ty for coming to my ted talk */
+
+/* 10/12/22 9:52pm: not me thinking "fieldset: last-of-type" would solve my issues lmao */
+
+/* 10/12/22 9:55pm: PLS roast my margins */
+
+/* 10/12/22 10:04pm: [it ain't much, but it's honest work meme] */
+
+/* 10/13/22 8:16am: who'd have thought a fieldset element with no borders would fix it oops */
+
+/* 10/14/22 10:43am: i scratched everything (css) and started over */
+
+/* 10/14/22 10:48am: when i displayed my labels as block and the checkboxes & radio buttons thought it would be cute to show up underneath the label instead of next to it: [surprised pikachu meme] */
+
+/* 10/14/22 10:53am: is "margin: 0.5rem" similar to double-spacing in word bc that's how my brain is registering it */
+
+/* 10/14/22 11:04am: what's the diff, in units, between "height: 100vh" and "width: 100%?" why not make them both % or make them both vh/vw? */
+
+/* 10/14/22 11:17am: hehe put my inputs inside my labels and problem solved */
+
+/* 10/14/22 3:36pm: fuck textarea and placeholders that is all x */
+
+/* 10/14/22 3:51pm: nvm didn't have the opening and closing tags on the same line oops */
+
+/* 10/14/22 4:13pm: idk how to center a button so i shoved it in a div but ig idk how to center divs either */
+
+/*10/14/22 4:17pm: nvm i fix */
+</style>
+</head>
+
+<body>
+  <h1 id="title">Puppy Survey Form</h1>
+  <p id="description">Thank you for your participation!</p>
+  <form id="survey-form">
+    
+    <fieldset id="first-fieldset-top-border">
+      <label id="name-label">Name
+        <input id="name" name="name" type="text" placeholder="Enter your name" required/>
+      </label>
+      <label id="email-label">Email
+        <input id="email" name="email" type="email" placeholder="Enter your email" required/>
+      </label>
+      <label id="puppy-label">What's your favorite kind of puppy?
+        <select id="dropdown" name="dropdown">
+          <option disabled selected value>(select one)</option>
+          <option value="Yorkshire-Terrior">Yorkshire Terrior</option>
+          <option value="Golden-Retriever">Golden Retriever</option>
+          <option value="Dachshund">Dachshund</option>
+          <option value="Pomeranian">Pomeranian</option>
+          <option value="French-Bulldog">French Bulldog</option>
+          <option value="Corgi">Corgi</option>
+          <option value="Other">Other</option>   
+        </select>  
+      </label>
+      <label id="number-label">How many puppies do you have?
+        <input id="number" type="number" pattern="[0-9] {0,100}" min="0" max="100" placeholder='"2"' required />
+      </label>
+    </fieldset>
+
+  <fieldset>
+      <label id="puppy-activities">What is your favorite activity to do with your puppy? (Check all that apply)  
+      <label for="walk-activities"><input class="inline" id="walk-activities" name="puppy-activities" type="checkbox" value="walks"/> Go on walks</label>
+      <label for="swim-activities"><input class="inline" id="swim-activities" name="puppy-activities" type="checkbox" value="swimming"/> Go swimming</label>
+      <label for="playtime-activities"><input class="inline" id="playtime-activities" name="puppy-activities" type="checkbox" value="playtime"/> Playtime</label>
+      <label for="car-ride-activities"><input class="inline" id="car-ride-activities" name="puppy-activities" type="checkbox" value="car-rides"/> Car rides</label>
+      <label for="puppy-park-activities"><input class="inline" id="puppy-park-activities" name="puppy-activities" type="checkbox" value="puppy-park"/> Go to a puppy park</label> 
+      <label for="tricks-activities"><input class="inline" id="tricks-activities" name="puppy-activities" type="checkbox" value="tricks"/> Teach your puppy a new trick</label>
+      <label for="naps-cuddles-activities"><input class="inline" id="naps-cuddles-activities" name="puppy-activities" type="checkbox" value="naps-cuddles"/> Naps and/or cuddles</label>
+    </label>
+  </fieldset>    
+
+<fieldset>
+    <label id="puppy-radio"> Will you get more puppies in the future?</label>
+    <label for="yes"><input class="inline" type="radio" id="yes" value="yes" name="user-radio"/> Yes</label>
+    <label for="no"><input class="inline" type="radio" id="no" name="user-radio" value="no" /> No</label>
+    <label for="unsure"><input class="inline" type="radio" id="unsure" name="user-radio" value="unsure"/> Unsure</label>
+      </fieldset> 
+   <fieldset>
+     <label>Comments or stories:
+     <textarea id="comment" name="comment" rows="5" cols="30" placeholder="Please leave any comments or share any puppy-related stories :)"></textarea>  
+     </label>
+     </fieldset>
+     <div>
+     <button type="submit" id="submit">Submit</button>
+     </div>  
+  </form>
+</body>
+</html>
